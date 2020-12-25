@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" as="style" href="css/style.css" type="text/css" />
+    <title data-react-helmet="true">Download | Oh My IRC</title>
+
+</head>
+
+<body>
+    <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 navbar__container items-center header-full">
+                        <div class="flex flex-row "><a aria-current="page" class="navbar__icon" href="index.html"><img
+                                    src="assets/icon.png" alt="Oh My IRC IRC Client" /></a><a aria-current="page"
+                                class="navbar__title" href="index.html">
+                                <h1>Oh My IRC</h1>
+                            </a>
+                        </div>
+                        <div><a class="button" href="donation.html">Donate</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main role="main">
+            <div class="row downloads container">
+
+                <article class="col-12">
+                    <header class="header--big">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="no-wrap">Oh My IRC</h1>
+                                <p class="text-lg" style="height:2rem;overflow:visible">
+                                    Chat with friends
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="platform-download center padding-bottom">
+                        <div class="platform-download__img gatsby-image-wrapper">
+                            <img aria-hidden="true" src="assets/ohmyirc-preview.png" alt="Oh My IRC" />
+
+                        </div>
+                        <div>
+                            <a event="" id="link-download" class="button button--big" href="download/all.html">
+                                Oh My IRC for
+                                <spam id="user-os"></span>
+                            </a>
+                            <br />
+                            <div class="small pt-4">
+                                Not your OS?
+                                <a href="download/all.html">All Downloads</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="row">
+                <div class="col-6">
+                    <div class="footer__branding"><img src="assets/icon.png" alt="Oh My IRC Client logo" /><span>
+                        </span><a href="https://github.com/victorlpgazolli/" target="_blank"> Developers</a></div>
+                </div>
+                <div class="col-6">
+                    <p class="footer__menu">
+                        <a href="donation.html">Donation</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function getOS() {
+            const systemConfig = {
+                userAgent: window.navigator.userAgent,
+                platform: window.navigator.platform
+            }
+            const platforms = {
+                MacOs: ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                Windows: ['Win32', 'Win64', 'Windows', 'WinCE'],
+                Ios: ['iPhone', 'iPad', 'iPod'],
+                Android: ['Android'],
+                Linux: ['Linux']
+            };
+            const os = Object.keys(platforms).find(platform => {
+                const foundByOs = platforms[platform].indexOf(systemConfig.platform) !== -1;
+                const foundByAgent = platforms[platform].some(plt => plt.match(systemConfig.userAgent));
+
+                if (foundByOs || foundByAgent) return platform;
+            })
+            const supportedOs = ['MacOs', 'Windows', 'Linux'];
+
+            if (supportedOs.indexOf(os) !== -1) return os
+
+            return false
+        }
+        const userOs = getOS();
+        if (userOs) {
+
+            const extensionPerOs = {
+                MacOs: "dmg",
+                Windows: "exe",
+                Linux: "dpgk"
+            }
+            const fileExtension = extensionPerOs[userOs];
+
+            const downloadPath = [
+                window.location.origin,
+                "assets",
+                "downloads",
+                `ohmyirc.${userOs.toLowerCase()}.latest.${extensionPerOs[userOs]}`
+            ].join("/")
+
+            document.getElementById("link-download").href = downloadPath;
+            document.getElementById("user-os").innerText = userOs;
+
+        }
+
+    </script>
+</body>
+
+</html>
