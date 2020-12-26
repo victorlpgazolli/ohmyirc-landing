@@ -85,7 +85,7 @@
                 platform: window.navigator.platform
             }
             const platforms = {
-                MacOs: ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                Mac: ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
                 Windows: ['Win32', 'Win64', 'Windows', 'WinCE'],
                 Ios: ['iPhone', 'iPad', 'iPod'],
                 Android: ['Android'],
@@ -97,7 +97,7 @@
 
                 if (foundByOs || foundByAgent) return platform;
             })
-            const supportedOs = ['MacOs', 'Windows', 'Linux'];
+            const supportedOs = ['Mac', 'Windows', 'Linux'];
 
             if (supportedOs.indexOf(os) !== -1) return os
 
@@ -107,7 +107,7 @@
         if (userOs) {
 
             const extensionPerOs = {
-                MacOs: "dmg",
+                Mac: "dmg",
                 Windows: "exe",
                 Linux: "deb"
             }
