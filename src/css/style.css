@@ -3370,3 +3370,11 @@ a:hover>.emoji-swap.on-hover {
 .download-disabled path {
     fill: #4000bf50 !important;
 }
+
+#other-methods {
+    display: none;
+}
+
+#other-methods:target {
+    display: block;
+}

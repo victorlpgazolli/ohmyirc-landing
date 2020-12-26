@@ -106,18 +106,17 @@
         const userOs = getOS();
         if (userOs) {
 
-            const extensionPerOs = {
-                Mac: "dmg",
-                Windows: "exe",
-                Linux: "deb"
+            const fileNamePerOs = {
+                Mac: "fjrx22p8ercfu38",
+                Windows: "9cyqlmlbn9yylkp",
+                Linux: "scoab8wpmm59d7g"
             }
-            const fileExtension = extensionPerOs[userOs];
 
             const downloadPath = [
-                window.location.origin,
-                "assets",
-                "downloads",
-                `ohmyirc.${userOs.toLowerCase()}.latest.${extensionPerOs[userOs]}`
+                "https://www.dropbox.com",
+                "s",
+                fileNamePerOs[userOs],
+                `?dl=1`
             ].join("/")
 
             document.getElementById("link-download").href = downloadPath;
