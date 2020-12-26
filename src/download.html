@@ -56,8 +56,7 @@
                             </a>
                             <br />
                             <div class="small pt-4">
-                                Not your OS?
-                                <a href="download/all.html">All Downloads</a>
+                                <a href="download/all.html">See All Downloads</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +109,7 @@
             const extensionPerOs = {
                 MacOs: "dmg",
                 Windows: "exe",
-                Linux: "dpgk"
+                Linux: "deb"
             }
             const fileExtension = extensionPerOs[userOs];
 
@@ -124,6 +123,8 @@
             document.getElementById("link-download").href = downloadPath;
             document.getElementById("user-os").innerText = userOs;
 
+        } else {
+            document.getElementById("link-download").style.display = "none"
         }
 
     </script>

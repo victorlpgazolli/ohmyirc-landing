@@ -3356,3 +3356,17 @@ a:hover>.emoji-swap.on-hover {
 .header-full>div:first-child {
     flex: 1;
 }
+
+.download-disabled :hover {
+    border-color: #4000bf50 !important;
+}
+
+.download-disabled {
+    background: #cccccc50 !important;
+    color: #4000bf60 !important;
+    cursor: default;
+}
+
+.download-disabled path {
+    fill: #4000bf50 !important;
+}
