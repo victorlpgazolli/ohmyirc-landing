@@ -1,3 +1,3 @@
 # ohmyirc-landing
 
-visit: https://ohmyirc.ga
+visit: https://ohmyirc.victorlpgazolli.dev
